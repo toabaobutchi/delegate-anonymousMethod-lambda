@@ -3,7 +3,7 @@
 ## Giới thiệu về Delegate
 
 **Delegate** là một kiểu dữ liệu tham chiếu trong C# kế thừa từ lớp `System.Delegate`. Delegate là kiểu để đóng gói 
-phương thức, tương tự như **Con trỏ hàm** (Function Pointer) trong C và C++, Functional Interface trong Java, ...
+phương thức, tương tự như **Con trỏ hàm** (Function Pointer) trong C và C++, **Functional Interface** trong Java, ...
 
 Ta có thể hiểu một cách đơn giản, Delegate là một kiểu tham chiếu dùng để tạo các biến tham chiếu đến 1 hoặc một vài phương thức nào đó đã có (thay vì tham chiếu đến giá trị, dữ liệu, ...).
 

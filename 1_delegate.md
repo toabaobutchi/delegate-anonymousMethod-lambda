@@ -66,10 +66,12 @@ Giống như biến thông thường, Delegate có thể thay đổi phương th
     {
         Console.WriteLine(str.ToUpper());
     }
+
     static void PrintLower(string str)
     {
         Console.WriteLine(str.ToLower());
     }
+
     static void Main()
     {
         DoSomething func = PrintUpper; // tham chiếu đến PrintUpper()
@@ -128,6 +130,50 @@ Cú pháp:
 
 * **`Func<T1, T2, T3, ... Tn, TResult>`**: tham chiếu đến hàm/phương thức trả về kiểu `TResult` và nhận các tham số `T1`, `T2`, `T3`, ... `Tn`.
 
-* **`Action<T1, T2, T3, ... Tn>`**: tham chiếu đến hàm/phương thức trả về kiểu `void` và nhận các tham số `T1`, `T2`, `T3`, ... `Tn`.
+* **`Action<T1, T2, T3, ... Tn>`**: tham chiếu đến hàm/phương thức trả về kiểu `void` (hay không trả về giá trị) và nhận các tham số `T1`, `T2`, `T3`, ... `Tn`.
 
+Tuy nhiên, điểm chung là cả 2 Delegate dựng sẵn này đều không nhận tham số có từ khoá `ref`, `out` hay `in`.
 
+**Ví dụ:**
+
+```js
+    static int Method_return(int a, int b)
+    {
+        return a + b;
+    }
+
+    static void Method(string str) {
+        Console.WriteLine(str);
+    }
+
+    static void Main()
+    {
+        // 'int' ở cuối Func<> biểu thị rằng phương thức sẽ trả về số nguyên
+        // các thành phần phía trước là danh sách kiểu tham số, ở đây là int và int
+        Func<int, int, int> func = Method_return; // phương thức có trả về
+
+        Action<string> action = Method; // phương thức void, string là kiểu tham số
+
+        Console.WriteLine(func(5, 2)); // sử dụng như các delegate bình thường
+
+        action("Hello World");
+    }
+```
+
+Cả 2 Delegate này đều thuộc namespace `System`.
+
+Ngoài ra, nếu phương thức được tham chiếu không có tham số nào, ta sẽ sử dụng `Action` thay cho `Action<>`.
+
+**Ví dụ:**
+
+```js
+    static void Method() { }
+
+    static void Main()
+    {
+        Action action = Method; // trả về void và không có tham số
+    }
+```
+
+> [!Important]
+> Một điều quan trọng cuối cùng là các từ khoá bổ sung, đặc biệt là `static` không ảnh hưởng đến Delegate. Delegate chỉ quan tâm đến kiểu trả về và tham số. Nhưng phương thức mà nó tham chiếu tới phải gọi được trong phương thức chứa Delegate. Các ví dụ trong phần này khai báo Delegate bên trong `Main()` nên đã sử dụng các phương thức `static`. Nếu gọi trong phương thức thường, sử dụng `static` hay không đều không quan trọng.

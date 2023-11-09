@@ -132,6 +132,9 @@ Cú pháp:
 
 * **`Action<T1, T2, T3, ... Tn>`**: tham chiếu đến hàm/phương thức trả về kiểu `void` (hay không trả về giá trị) và nhận các tham số `T1`, `T2`, `T3`, ... `Tn`.
 
+> [!Note]
+> Số tham số mà `Func<>` và `Action<>` nhận được tối đa là 16 tham số, không tính đến `TResult`.
+
 Tuy nhiên, điểm chung là cả 2 Delegate dựng sẵn này đều không nhận tham số có từ khoá `ref`, `out` hay `in`.
 
 **Ví dụ:**
@@ -177,3 +180,6 @@ Ngoài ra, nếu phương thức được tham chiếu không có tham số nào
 
 > [!Important]
 > Một điều quan trọng cuối cùng là các từ khoá bổ sung, đặc biệt là `static` không ảnh hưởng đến Delegate. Delegate chỉ quan tâm đến kiểu trả về và tham số. Nhưng phương thức mà nó tham chiếu tới phải gọi được trong phương thức chứa Delegate. Các ví dụ trong phần này khai báo Delegate bên trong `Main()` nên đã sử dụng các phương thức `static`. Nếu gọi trong phương thức thường, sử dụng `static` hay không đều không quan trọng.
+
+**Gợi ý:** Có thể tìm hiểu thêm về `Predicate<T>`, một Delegate nhận _**một tham số**_ và trả về kiểu `bool`. Nhưng vì chỉ nhận một tham số, do đó `Predicate<T>` thường bị thay thế bởi `Func<..., bool>`.
+

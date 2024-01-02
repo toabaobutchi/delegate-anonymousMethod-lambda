@@ -110,7 +110,7 @@ Phương thức ẩn danh `static` **không thể sử dụng**:
     }
 ```
 
-Tuy nhiên trong quá trình phát triển của C#, phương thức ẩn danh không còn được sử dụng phổ biến với sự thay thế của **Biểu thức Lambda** (C# 3.0) và **Hàm cục bộ** (C# 7.0).
+Tuy nhiên trong quá trình phát triển của C#, phương thức ẩn danh không còn được sử dụng phổ biến với sự thay thế của [**Biểu thức Lambda**](/3_lambda_expression.md) (C# 3.0) và **Hàm cục bộ** (C# 7.0).
 
 Các hạn chế của Phương thức ẩn danh:
 

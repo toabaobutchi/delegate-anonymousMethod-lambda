@@ -13,3 +13,4 @@ Cú pháp:
     }
 ```
 
+Nhưng phương thức ẩn danh không có tên, nên ta phải tạo 1 đối tượng `delegate` và tham chiếu đến phương thức ẩn danh vừa tạo (vì thực tế nó cũng được xem là phương thức nên `delegate` có thể tham chiếu đến được) - Xem lại nội dung về [**Delegate**]().

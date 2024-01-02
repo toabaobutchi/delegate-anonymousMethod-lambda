@@ -1,6 +1,6 @@
 # Biểu thức Lambda - Lambda Expression
 
-**Biểu thức Lambda** (Lambda Expresion) được C# giới thiệu trong **C# 3.0** (_phiên bản .NET Framework 3.0/3.5 trong Visual Studio 2008_) và được xem là phương án để thay thế Phương thức ẩn danh (Anonymous Method).
+**Biểu thức Lambda** (Lambda Expresion) được C# giới thiệu trong **C# 3.0** (_phiên bản .NET Framework 3.0/3.5 trong Visual Studio 2008_) và được xem là phương án để thay thế [**Phương thức ẩn danh**](/2_anonymous_method.md) (Anonymous Method).
 
 Về cơ bản, Lambda cũng có thể được xem là phương thức ẩn danh, nhưng nó có cú pháp đơn giản và hiệu quả. Bên cạnh đó về cách dùng cũng tương tự như phương thức ẩn danh.
 

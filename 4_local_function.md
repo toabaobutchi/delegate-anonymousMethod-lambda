@@ -42,7 +42,8 @@ Hiện tại ta chỉ cần quan tâm đến từ khoá `static`. Một hàm c�
 ```cs
     int CountPrimeNumber(params int[] arr)
     {
-        bool IsPrime(int num) // khai báo hàm cục bộ kiểm tra số nguyên tố
+        // khai báo hàm cục bộ kiểm tra số nguyên tố
+        bool IsPrime(int num) 
         {
             if (num < 2) return false;
             for(int i = 2; i * i < num; ++i)
@@ -50,6 +51,7 @@ Hiện tại ta chỉ cần quan tâm đến từ khoá `static`. Một hàm c�
                     return false;
             return true;
         }
+
         int count = 0;
         foreach(var item in arr)
         {
